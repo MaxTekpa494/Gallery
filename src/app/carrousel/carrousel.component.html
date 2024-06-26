@@ -1,0 +1,19 @@
+<div class="row">
+  <!-- Vous avez en dessous des exemples de code html pour afficher des 
+  images avec leur code en base64
+  -->
+
+  <div class="col s3">
+    <div class="card">
+      <div class="card-image">
+        <div *ngFor="let img of images">
+          <img
+            class="responsive-img"
+            src="data:image/-{{ img.type }};base64,{{ img.content }}"
+          />
+          <i class="material-icons" (click)="onDelete(img.id)">delete</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

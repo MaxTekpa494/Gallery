@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <h5>Ajout d'une image</h5>
+    <form (ngSubmit)="transmit()" #imageForm="ngForm">
+      <label>Type d'image</label>
+      <select
+        name="imageType"
+        [(ngModel)]="imageType"
+        class="browser-default"
+        required
+        #img="ngModel"
+      >
+        <option value="png">png</option>
+        <option value="gif">gif</option>
+      </select>
+      <input
+        type="text"
+        name="content"
+        [(ngModel)]="content"
+        placeholder="base64 de l'image"
+        required
+        #base="ngModel"
+      />
+      <div *ngIf="base.errors">
+        "Votre nom d'utilisateur ne respecte pas les contraintes"
+      </div>
+      <button
+        class="btn waves-effect waves-light"
+        type="submit"
+        [disabled]="base.invalid"
+      >
+        Ajouter l'image
+      </button>
+    </form>
+  </div>
+</div>

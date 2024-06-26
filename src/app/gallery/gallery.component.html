@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col s4 valign-wrapper indigo darken-3">
+    <app-new-image-form
+      (typeImg)="recupType($event)"
+      (baseImg)="recupBase($event)"
+    ></app-new-image-form>
+  </div>
+  <div class="col s8 indigo darken-1">
+    <app-carrousel [images]="allImg" (idImg)="recupId($event)"></app-carrousel>
+  </div>
+</div>
+
+<!--
+<ul>
+  <li *ngFor="let img of allImg">
+    {{ img.content }}
+  </li>
+  <ul></ul>
+</ul>
+-->
